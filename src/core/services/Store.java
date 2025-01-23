@@ -1,10 +1,12 @@
-package core;
+package core.services;
 
-	import java.util.HashMap;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+import core.data.Client;
+import core.data.Cart;
 import estorePojo.exceptions.InsufficientBalanceException;
 import estorePojo.exceptions.InvalidCartException;
 import estorePojo.exceptions.UnknownAccountException;
@@ -104,7 +106,7 @@ public class Store {
 	     * 
 	     * @throws UnknownItemException
 	     */
-	    public Order pay( Cart cart, String address, String bankAccountRef )
+	    public Order pay(Cart cart, String address, String bankAccountRef )
 	    throws
 	    InvalidCartException, UnknownItemException,
 	    InsufficientBalanceException, UnknownAccountException {
