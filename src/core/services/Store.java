@@ -9,12 +9,13 @@ import core.Client;
 import core.data.Cart;
 import core.data.ItemInStock;
 import core.data.Order;
+import core.services.interfaces.IStore;
 import estorePojo.exceptions.InsufficientBalanceException;
 import estorePojo.exceptions.InvalidCartException;
 import estorePojo.exceptions.UnknownAccountException;
 import estorePojo.exceptions.UnknownItemException;
 
-public class Store {
+public class Store implements IStore {
 
 	    private Provider provider;
 	    private Bank bank;
