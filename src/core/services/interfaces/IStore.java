@@ -9,6 +9,9 @@ import estorePojo.exceptions.UnknownAccountException;
 import estorePojo.exceptions.UnknownItemException;
 
 public interface IStore {
+    void setProvider(IProvider provider) ;
+
+    void setBank(IBank bank) ;
     Cart addItemToCart(Cart cart, Client client, Object item, int qty)
             throws UnknownItemException, InvalidCartException;
 

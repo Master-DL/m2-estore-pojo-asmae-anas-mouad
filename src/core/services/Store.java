@@ -9,6 +9,8 @@ import core.Client;
 import core.data.Cart;
 import core.data.ItemInStock;
 import core.data.Order;
+import core.services.interfaces.IBank;
+import core.services.interfaces.IProvider;
 import core.services.interfaces.IStore;
 import estorePojo.exceptions.InsufficientBalanceException;
 import estorePojo.exceptions.InvalidCartException;
@@ -17,18 +19,19 @@ import estorePojo.exceptions.UnknownItemException;
 
 public class Store implements IStore {
 
-	    private Provider provider;
-	    private Bank bank;
+	    private IProvider provider;
+	    private IBank bank;
 
-	    /**
-	     * Constructs a new StoreImpl
-	     */
-	    public Store(Provider prov, Bank bk) {
-	        provider = prov;
-	        bank = bk;
-	    }
 
-	    /**
+		public void setProvider(IProvider provider) {
+			this.provider = provider;
+		}
+
+		public void setBank(IBank bank) {
+			this.bank = bank;
+		}
+
+	/**
 	     * @param item  a given item
 	     * @return      the price of a given item
 	     * @throws UnknownItemException
